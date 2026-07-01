@@ -23,3 +23,12 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
+
+      - name: test code
+        run: npm run test
+
+      - name: build code
+        run: npm run build
+
+      - name: deploy code
+        run: echo "deploying code...."
