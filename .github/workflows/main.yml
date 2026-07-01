@@ -1,4 +1,4 @@
-name: Lint checking
+name: first workflow
 
 on:
   push:
@@ -24,6 +24,21 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
       - name: test code
         run: npm run test
 
@@ -32,3 +47,4 @@ jobs:
 
       - name: deploy code
         run: echo "deploying code...."
+  
