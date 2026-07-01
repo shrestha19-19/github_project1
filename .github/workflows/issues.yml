@@ -1,0 +1,29 @@
+name: issue workflows
+
+on:
+  issues:
+    types: 
+      - opened
+
+jobs:
+  issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: issue created
+        run: |
+          echo "=================================="
+          echo "🚨 New Issue Created!"
+          echo "=================================="
+          echo "Issue Number  : ${{ github.event.issue.number }}"
+          echo "Issue Title   : ${{ github.event.issue.title }}"
+          echo "Issue Body    : ${{ github.event.issue.body }}"
+          echo "Created By    : ${{ github.event.issue.user.login }}"
+          echo "Created At    : ${{ github.event.issue.created_at }}"
+          echo "Issue URL     : ${{ github.event.issue.html_url }}"
+          echo "Repo Name     : ${{ github.repository }}"
+          echo "=================================="
+        
