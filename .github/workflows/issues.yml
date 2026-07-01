@@ -26,4 +26,5 @@ jobs:
           echo "Issue URL     : ${{ github.event.issue.html_url }}"
           echo "Repo Name     : ${{ github.repository }}"
           echo "=================================="
+          echo "thats all"
         
